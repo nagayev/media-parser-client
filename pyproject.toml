@@ -1,0 +1,50 @@
+[tool.poetry]
+name = "media-parser-client"
+version = "0.1.0"
+description = ""
+authors = ["Jag_k <me@jagk.dev>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "media_parser"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+httpx = "^0.24.1"
+pydantic = "^1.10.9"
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.0.274"
+black = {extras = ["d"], version = "^23.3.0"}
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.black]
+line-length = 120
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.git
+  | \.hg
+  | \.mypy_cache
+  | \.pytest_cache
+  | \.tox
+  | \.venv
+  | migrations
+  | app/fns_client/protocol
+)/
+'''
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+select = [
+    "E", # pyflakes
+    "F", # pycodestyle errors
+    "W", # pycodestyle warnings
+    "UP", # pyupgrade
+    "I", # isort
+    "C4", # flake8-comprehensions
+]
