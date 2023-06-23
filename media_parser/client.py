@@ -21,7 +21,7 @@ class Client(BaseModel):
     def client(self):
         return httpx.AsyncClient(base_url=self.url)
 
-    async def parce(self, url: str, use_cache: bool = True, user: str = None) -> GroupedMedia:
+    async def parse(self, url: str, use_cache: bool = True, user: str = None) -> GroupedMedia:
         headers = {}
         if self.service:
             headers["X-Service"] = self.service
