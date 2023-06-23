@@ -18,7 +18,7 @@ client = Client("http://localhost:8000")
 
 async def main():
     # Get all media
-    media = await client.parce("https://www.youtube.com/watch?v=9bZkp7q19f0", user="jag-k")
+    media = await client.parse("https://www.youtube.com/watch?v=9bZkp7q19f0", user="jag-k")
     print(media)
 
     # If media is incorrect, you can send feedback
